@@ -27,7 +27,7 @@ namespace appCarService
 
         private void btnTovar_Click(object sender, RoutedEventArgs e)
         {
-
+            Manager.MainFrame.Navigate(new TovarPage());
         }
 
         private void btnServices_Click(object sender, RoutedEventArgs e)

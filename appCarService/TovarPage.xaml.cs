@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,9 @@ namespace appCarService
         public TovarPage()
         {
             InitializeComponent();
+            ModelBD.BaseModel bd = new ModelBD.BaseModel();
+            bd.Products.Load();
+            lvTovar.ItemsSource = bd.Products.Local;
         }
     }
 }

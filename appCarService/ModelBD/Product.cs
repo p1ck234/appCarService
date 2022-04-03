@@ -4,7 +4,9 @@ namespace appCarService.ModelBD
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity;
     using System.Data.Entity.Spatial;
+    using System.Linq;
 
     [Table("Product")]
     public partial class Product
@@ -33,5 +35,13 @@ namespace appCarService.ModelBD
         public bool isActive { get; set; }
 
         public int? ManufactureID { get; set; }
+
+        public string ActualText
+        {
+            get
+            {
+                return isActive ? "Актуально" : "Неактульно";
+            }
+        }
     }
 }
