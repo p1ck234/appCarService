@@ -23,7 +23,6 @@ namespace appCarService
     /// </summary>
     public partial class AvtorizationWindow : Window
     {
-        public bool admin = false;
         public AvtorizationWindow()
         {
             InitializeComponent();
@@ -36,12 +35,15 @@ namespace appCarService
         {
             ModelBD.BaseModel bd = new ModelBD.BaseModel();
             bd.Users.Load();
-            admin = false;
             if (bd.Users.Local.Where(x => x.login == tbLogin.Text & x.password == tbPass.Password).FirstOrDefault() != null)
             {
                 if (bd.Users.Local.Where(x => x.login == tbLogin.Text & x.password == tbPass.Password & x.admin == true).FirstOrDefault() != null)
                 {
-                    admin = true;
+                    Manager.Admin = true;
+                }
+                else
+                {
+                    Manager.Admin = false;
                 }
                 MainWindow mw = new MainWindow();
                 mw.Show();
