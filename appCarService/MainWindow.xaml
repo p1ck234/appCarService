@@ -23,7 +23,7 @@
                        Style="{StaticResource tbSetting}"
                        HorizontalAlignment="Right" VerticalAlignment="Top"
                        Margin="3"/>
-            <Button Height="20" Name="btnBack"
+            <Button Height="30" Name="btnBack"
                     Content="Назад" VerticalAlignment="Bottom" 
                     HorizontalAlignment="Right" Margin="3" Visibility="Hidden"
                     Click="btnBack_Click"/>

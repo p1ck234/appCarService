@@ -15,17 +15,18 @@
 
         <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Введите название для поиска:" Width="175"
-                           TextAlignment="Right"/>
-                <TextBox Width="225" Name="tbSearch" 
+                <TextBlock Text="Введите название для поиска:"
+                           TextAlignment="Right"
+                           FontSize="14" FontFamily="Tahoma" VerticalAlignment="Center"/>
+                <TextBox Width="200" Name="tbSearch" 
                          TextChanged="tbSearch_TextChanged"/>
                 <CheckBox Name="CheckActual" Checked="CheckActual_Checked"
                           Unchecked="CheckActual_Unchecked" 
                           Content="Показывать только актуальное"
-                          HorizontalAlignment="Center"
-                          Margin="5,0,0,0"/>
+                          HorizontalAlignment="Center" VerticalAlignment="Center"
+                          Margin="5,0,0,0" FontSize="14" FontFamily="Tahoma"/>
                 <Button Content="Заказать" Name="btnBuy" Click="btnBuy_Click" 
-                        Height="auto" Margin="10,0,0,0"/>
+                        Height="30" Margin="10,0,0,0"/>
             </StackPanel>
         </WrapPanel>
         
