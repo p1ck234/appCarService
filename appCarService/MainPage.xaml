@@ -11,11 +11,11 @@
     <Grid>
         <StackPanel Orientation="Horizontal"
                     HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button Content="Товары" Margin="20"
-                    Height="100" Width="150"
+            <Button Name="btnTovar" Click="btnTovar_Click" Content="Товары" 
+                    Margin="20" Height="100" Width="150"
                     FontSize="16" FontWeight="Bold"/>
-            <Button Content="Услуги" Margin="20"
-                    Height="100" Width="150" 
+            <Button Name="btnServices" Click="btnServices_Click" Content="Услуги" 
+                    Margin="20" Height="100" Width="150" 
                     FontSize="16" FontWeight="Bold"/>
         </StackPanel>
         

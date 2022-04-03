@@ -24,5 +24,15 @@ namespace appCarService
         {
             InitializeComponent();
         }
+
+        private void btnTovar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnServices_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
