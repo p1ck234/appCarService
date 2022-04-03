@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:appCarService"
+        Icon="Resources/service_logo.ico"
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="800">
     <Grid>
@@ -20,6 +21,9 @@
                        Style="{StaticResource tbSetting}"
                        HorizontalAlignment="Right" VerticalAlignment="Top"
                        Margin="3"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Frame Name="MainFrame" NavigationUIVisibility="Hidden"/>
         </Grid>
         <Grid Grid.Row="2" Background="#ffffcc"/>
     </Grid>
