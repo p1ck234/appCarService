@@ -22,6 +22,15 @@ namespace appCarService
         public MainWindow()
         {
             InitializeComponent();
+            AvtorizationWindow ad = new AvtorizationWindow();
+            if (ad.admin == true)
+            {
+                tbRole.Text = "Вы вошли как менеджер";
+            }
+            else
+            {
+                tbRole.Text = "Вы вошли как клиент";
+            }
         }
     }
 }

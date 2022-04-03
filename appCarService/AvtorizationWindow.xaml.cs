@@ -43,7 +43,9 @@ namespace appCarService
                 {
                     admin = true;
                 }
-
+                MainWindow mw = new MainWindow();
+                mw.Show();
+                this.Close();
             }
             else
             {
