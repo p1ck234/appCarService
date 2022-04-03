@@ -53,5 +53,9 @@ namespace appCarService
                 lvTovar.ItemsSource = bd.Products.Local.Where(x => x.isActive);
             }
         }
+        private void btnBuy_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

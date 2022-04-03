@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:appCarService"
         Icon="Resources/service_logo.ico"
         mc:Ignorable="d"
-        Title="Окно магазина" Height="500" Width="800">
+        Title="Окно магазина" Height="500" Width="800" WindowState="Maximized" >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>

@@ -24,6 +24,8 @@
                           Content="Показывать только актуальное"
                           HorizontalAlignment="Center"
                           Margin="5,0,0,0"/>
+                <Button Content="Заказать" Name="btnBuy" Click="btnBuy_Click" 
+                        Height="auto" Margin="10,0,0,0"/>
             </StackPanel>
         </WrapPanel>
         
