@@ -68,6 +68,12 @@
     <Compile Include="BuyWindow.xaml.cs">
       <DependentUpon>BuyWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ModelBD\BaseModel.cs" />
+    <Compile Include="ModelBD\Manufacturer.cs" />
+    <Compile Include="ModelBD\Product.cs" />
+    <Compile Include="ModelBD\ProductSale.cs" />
+    <Compile Include="ModelBD\Service.cs" />
+    <Compile Include="ModelBD\User.cs" />
     <Compile Include="TovarPage.xaml.cs">
       <DependentUpon>TovarPage.xaml</DependentUpon>
     </Compile>
@@ -108,11 +114,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Manager.cs" />
-    <Compile Include="ModelBD\BaseModel.cs" />
-    <Compile Include="ModelBD\Manufacturer.cs" />
-    <Compile Include="ModelBD\Product.cs" />
-    <Compile Include="ModelBD\ProductSale.cs" />
-    <Compile Include="ModelBD\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
