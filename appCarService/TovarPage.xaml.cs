@@ -1,4 +1,5 @@
-﻿using System;
+﻿using appCarService.ModelBD;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -28,8 +29,18 @@ namespace appCarService
             bd.Products.Load();
             lvTovar.ItemsSource = bd.Products.Local;
             CheckActual.IsChecked = true;
+
+            if (Manager.Admin == true)
+            {
+                btnBuy.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                btnBuy.Visibility = Visibility.Visible;
+            }
         }
 
+        public static Product selectEntites = new Product(); 
         private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
             bd.Products.Load();
@@ -55,6 +66,7 @@ namespace appCarService
         }
         private void btnBuy_Click(object sender, RoutedEventArgs e)
         {
+            selectEntites = (Product)lvTovar.SelectedItem;
 
         }
     }

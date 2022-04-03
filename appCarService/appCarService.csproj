@@ -65,6 +65,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BuyWindow.xaml.cs">
+      <DependentUpon>BuyWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TovarPage.xaml.cs">
       <DependentUpon>TovarPage.xaml</DependentUpon>
     </Compile>
@@ -80,6 +83,10 @@
       <DependentUpon>AvtorizationWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="BuyWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
