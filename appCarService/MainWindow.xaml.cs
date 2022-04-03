@@ -33,5 +33,22 @@ namespace appCarService
             Manager.MainFrame = MainFrame;
             Manager.MainFrame.Navigate(new MainPage());
         }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.GoBack();
+        }
+
+        private void MainFrame_ContentRendered(object sender, EventArgs e)
+        {
+            if (MainFrame.CanGoBack)
+            {
+                btnBack.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                btnBack.Visibility = Visibility.Hidden;
+            }
+        }
     }
 }

@@ -12,7 +12,23 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <ListView Grid.Row="1" Name="lvTovar" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Введите название для поиска:" Width="175"
+                           TextAlignment="Right"/>
+                <TextBox Width="225" Name="tbSearch" 
+                         TextChanged="tbSearch_TextChanged"/>
+                <CheckBox Name="CheckActual" Checked="CheckActual_Checked"
+                          Unchecked="CheckActual_Unchecked" 
+                          Content="Показывать только актуальное"
+                          HorizontalAlignment="Center"
+                          Margin="5,0,0,0"/>
+            </StackPanel>
+        </WrapPanel>
+        
+        <ListView Grid.Row="1" Name="lvTovar" 
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                   HorizontalContentAlignment="Center">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -39,12 +55,17 @@
                                 </Binding>
                             </Image.Source>
                         </Image>
-                        <TextBlock Text="{Binding Title}" VerticalAlignment="Center" TextAlignment="Center"
-                                   Width="390" TextWrapping="Wrap" HorizontalAlignment="Center"
+                        <TextBlock Text="{Binding Title}" VerticalAlignment="Center" 
+                                   TextAlignment="Center"
+                                   Width="390" TextWrapping="Wrap" 
+                                   HorizontalAlignment="Center"
                                    Margin="5,5" FontSize="26" Grid.Row="0"/>
-                        <TextBlock Text="{Binding Cost,StringFormat={}{0:N2} РУБ}" Grid.Row="2" Margin="5,5,5,15" HorizontalAlignment="Center"
+                        <TextBlock Text="{Binding Cost,StringFormat={}{0:N2} РУБ}" 
+                                   Grid.Row="2" Margin="5,5,5,15" 
+                                   HorizontalAlignment="Center"
                                    FontSize="26" FontWeight="Bold"/>
-                        <TextBlock Text="{Binding ActualText}" Grid.Row="3" FontSize="14" HorizontalAlignment="Left"/>
+                        <TextBlock Text="{Binding ActualText}" Grid.Row="3" 
+                                   FontSize="14" HorizontalAlignment="Left"/>
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>

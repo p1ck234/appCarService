@@ -21,12 +21,37 @@ namespace appCarService
     /// </summary>
     public partial class TovarPage : Page
     {
+        ModelBD.BaseModel bd = new ModelBD.BaseModel();
         public TovarPage()
         {
             InitializeComponent();
-            ModelBD.BaseModel bd = new ModelBD.BaseModel();
             bd.Products.Load();
             lvTovar.ItemsSource = bd.Products.Local;
+            CheckActual.IsChecked = true;
+        }
+
+        private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            bd.Products.Load();
+            lvTovar.ItemsSource = bd.Products.Local.Where(x => x.Title.ToLower().Contains(tbSearch.Text.ToLower()));
+        }
+
+        private void CheckActual_Checked(object sender, RoutedEventArgs e)
+        {
+            if (CheckActual.IsChecked.Value)
+            {
+                bd.Products.Load();
+                lvTovar.ItemsSource = bd.Products.Local.Where(x => x.isActive);
+            }
+        }
+
+        private void CheckActual_Unchecked(object sender, RoutedEventArgs e)
+        {
+            bd.Products.Load();
+            if (CheckActual.IsChecked.Value)
+            {
+                lvTovar.ItemsSource = bd.Products.Local.Where(x => x.isActive);
+            }
         }
     }
 }
