@@ -23,6 +23,16 @@ namespace appCarService
         public MainPage()
         {
             InitializeComponent();
+            if (Manager.Admin == true)
+            {
+                btnSell.Visibility = Visibility.Visible;
+                btnServicesManager.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                btnSell.Visibility = Visibility.Hidden;
+                btnServicesManager.Visibility = Visibility.Hidden;
+            }
         }
 
         private void btnTovar_Click(object sender, RoutedEventArgs e)
@@ -31,6 +41,16 @@ namespace appCarService
         }
 
         private void btnServices_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnSell_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnServicesManager_Click(object sender, RoutedEventArgs e)
         {
 
         }
