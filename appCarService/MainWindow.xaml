@@ -14,8 +14,7 @@
             <RowDefinition Height="0.5*"/>
         </Grid.RowDefinitions>
         <Grid Background="#ffffcc">
-            <TextBlock Text="Доеду сам!" FontSize="24" Style="{StaticResource tbSetting}"
-                       Margin="90,0,0,0"/>
+            <TextBlock Text="Доеду сам!" FontSize="24" Style="{StaticResource tbSetting}"/>
             <Image Source="Resources/service_logo.png"
                    VerticalAlignment="Center" HorizontalAlignment="Left"
                    Margin="10,0,0,0"/>

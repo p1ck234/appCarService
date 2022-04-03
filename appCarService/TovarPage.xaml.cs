@@ -59,10 +59,8 @@ namespace appCarService
         private void CheckActual_Unchecked(object sender, RoutedEventArgs e)
         {
             bd.Products.Load();
-            if (CheckActual.IsChecked.Value)
-            {
-                lvTovar.ItemsSource = bd.Products.Local.Where(x => x.isActive);
-            }
+            lvTovar.ItemsSource = bd.Products.Local;
+            
         }
         private void btnBuy_Click(object sender, RoutedEventArgs e)
         {
