@@ -31,14 +31,16 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <TextBlock Style="{StaticResource tbSetting}" Text="Логин"/>
-            <TextBox Style="{StaticResource tBoxSetting}" Grid.Column="1"/>
+            <TextBox Name="tbLogin" Style="{StaticResource tBoxSetting}" Grid.Column="1"/>
             <TextBlock Style="{StaticResource tbSetting}" Grid.Row="1"
                        Text="Пароль"/>
-            <PasswordBox Grid.Row="1" Grid.Column="1" Width="150" VerticalAlignment="Center"
+            <PasswordBox Name="tbPass" Grid.Row="1" Grid.Column="1" Width="150" VerticalAlignment="Center"
                          HorizontalAlignment="Center" FontFamily="Tahoma"
                          FontWeight="Bold"/>
-            <Button Grid.Row="2" Content="Войти"/>
-            <Button Grid.Row="2" Grid.Column="1" Content="Выход"/>
+            <Button Name="btnEnter" Grid.Row="2" Content="Войти"
+                    Click="btnEnter_Click"/>
+            <Button Name="btnQuit" Grid.Row="2" Grid.Column="1" Content="Выход"
+                    Click="btnQuit_Click"/>
         </Grid>
         <StackPanel Grid.Row="2" Style="{StaticResource spSetting}">
 
