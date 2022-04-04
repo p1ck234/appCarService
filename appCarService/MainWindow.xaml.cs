@@ -50,5 +50,10 @@ namespace appCarService
                 btnBack.Visibility = Visibility.Hidden;
             }
         }
+
+        private void btnQuit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

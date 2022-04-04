@@ -31,6 +31,8 @@
             <Frame Name="MainFrame" NavigationUIVisibility="Hidden"
                    ContentRendered="MainFrame_ContentRendered"/>
         </Grid>
-        <Grid Grid.Row="2" Background="#ffffcc"/>
+        <Grid Grid.Row="2" Background="#ffffcc">
+            <Button Content="Выход" Name="btnQuit" Click="btnQuit_Click"/>
+        </Grid>
     </Grid>
 </Window>

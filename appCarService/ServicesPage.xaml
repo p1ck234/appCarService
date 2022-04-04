@@ -24,23 +24,59 @@
                    Text="Отчет: "/>
         <StackPanel Grid.Column="1" VerticalAlignment="Center">
             <CheckBox Name="cb1" FontSize="14" FontFamily="Tohoma" 
-                      Content="Техническое обслуживание"/>
+                      Content="Техническое обслуживание">
+                <CheckBox.ToolTip>
+                    <ToolTip>2000 руб.</ToolTip>
+                </CheckBox.ToolTip>
+            </CheckBox>
             <CheckBox Name="cb2" FontSize="14" FontFamily="Tohoma" 
-                      Content="Подготовка и продажа новых и б/у автомобилей"/>
+                      Content="Подготовка и продажа новых и б/у автомобилей">
+                <CheckBox.ToolTip>
+                    <ToolTip>5000 руб.</ToolTip>
+                </CheckBox.ToolTip>
+            </CheckBox>
             <CheckBox Name="cb3" FontSize="14" FontFamily="Tohoma" 
-                      Content="Ремонт автоматических и механических коробок передач"/>
+                      Content="Ремонт автоматических и механических коробок передач">
+                <CheckBox.ToolTip>
+                    <ToolTip>10000 руб.</ToolTip>
+                </CheckBox.ToolTip>
+            </CheckBox>
             <CheckBox Name="cb4" FontSize="14" FontFamily="Tohoma" 
-                      Content="Обслуживание и ремонт двигателей"/>
+                      Content="Обслуживание и ремонт двигателей">
+                <CheckBox.ToolTip>
+                    <ToolTip>15000 руб.</ToolTip>
+                </CheckBox.ToolTip>
+            </CheckBox>
             <CheckBox Name="cb5" FontSize="14" FontFamily="Tohoma" 
-                      Content="Кузовной ремонт"/>
+                      Content="Кузовной ремонт">
+                <CheckBox.ToolTip>
+                    <ToolTip>10000 руб.</ToolTip>
+                </CheckBox.ToolTip>
+            </CheckBox>
             <CheckBox Name="cb6" FontSize="14" FontFamily="Tohoma" 
-                      Content="Ремонт ходовой части, балансировка, развал-схождения"/>
+                      Content="Ремонт ходовой части, балансировка, развал-схождения">
+                <CheckBox.ToolTip>
+                    <ToolTip>13000 руб.</ToolTip>
+                </CheckBox.ToolTip>
+            </CheckBox>
             <CheckBox Name="cb7" FontSize="14" FontFamily="Tohoma" 
-                      Content="Ремонт электрики"/>
+                      Content="Ремонт электрики">
+                <CheckBox.ToolTip>
+                    <ToolTip>15000 руб.</ToolTip>
+                </CheckBox.ToolTip>
+            </CheckBox>
             <CheckBox Name="cb8" FontSize="14" FontFamily="Tohoma" 
-                      Content="Установка и обслуживание газового оборудования"/>
+                      Content="Установка и обслуживание газового оборудования">
+                <CheckBox.ToolTip>
+                    <ToolTip>16000 руб.</ToolTip>
+                </CheckBox.ToolTip>
+            </CheckBox>
             <CheckBox Name="cb9" FontSize="14" FontFamily="Tohoma" 
-                      Content="Реставрация авто и запчастей"/>
+                      Content="Реставрация авто и запчастей">
+                <CheckBox.ToolTip>
+                    <ToolTip>13000 руб.</ToolTip>
+                </CheckBox.ToolTip>
+            </CheckBox>
         </StackPanel>
         <TextBlock Name="tbOtchet" Grid.Row="1" Grid.Column="1" Style="{StaticResource tbSetting}"
                    TextWrapping="Wrap" FontWeight="Light" VerticalAlignment="Top"
