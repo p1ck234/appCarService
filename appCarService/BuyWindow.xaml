@@ -8,13 +8,22 @@
         mc:Ignorable="d"
         Title="Окно покупки" Height="300" Width="450" ResizeMode="NoResize">
     <Grid Background="#ffffcc">
-        <StackPanel>
-            <TextBlock Style="{StaticResource tbSetting}"
+        <Grid>
+            <StackPanel>
+                <TextBlock Style="{StaticResource tbSetting}"
                        Text="Вы действительно хотите заказать " 
                        VerticalAlignment="Center" 
                        HorizontalAlignment="Center" Margin="0,30,0,0"
                        FontSize="14" Name="tbBuy"
                        TextWrapping="Wrap"/>
+            </StackPanel>
+            <StackPanel Margin="0,80,0,0">
+                <ComboBox Width="100" FontSize="14" FontFamily="Tohoma"
+                      Margin="0,60,0,0" Name="cmbCount"/>
+                <TextBlock Style="{StaticResource tbSetting}"
+                       Text="Количество"
+                       FontSize="14" TextWrapping="Wrap"/>
+            </StackPanel>
             <StackPanel VerticalAlignment="Center" 
                         Orientation="Horizontal" HorizontalAlignment="Center"
                         Margin="0,150,0,0">
@@ -23,6 +32,6 @@
                 <Button Margin="5" Content="Нет" Name="btnNo"
                         Click="btnNo_Click"/>
             </StackPanel>
-        </StackPanel>
+        </Grid>
     </Grid>
 </Window>
