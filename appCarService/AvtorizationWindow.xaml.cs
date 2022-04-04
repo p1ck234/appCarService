@@ -35,34 +35,41 @@ namespace appCarService
         {
             ModelBD.BaseModel bd = new ModelBD.BaseModel();
             bd.Users.Load();
-            if (bd.Users.Local.Where(x => x.login == tbLogin.Text & x.password == tbPass.Password).FirstOrDefault() != null)
+            try
             {
-                if (bd.Users.Local.Where(x => x.login == tbLogin.Text & x.password == tbPass.Password & x.admin == true).FirstOrDefault() != null)
+                if (bd.Users.Local.Where(x => x.login == tbLogin.Text & x.password == tbPass.Password).FirstOrDefault() != null)
                 {
-                    Manager.Admin = true;
+                    if (bd.Users.Local.Where(x => x.login == tbLogin.Text & x.password == tbPass.Password & x.admin == true).FirstOrDefault() != null)
+                    {
+                        Manager.Admin = true;
+                    }
+                    else
+                    {
+                        Manager.Admin = false;
+                    }
+                    MainWindow mw = new MainWindow();
+                    mw.Show();
+                    this.Close();
                 }
                 else
                 {
-                    Manager.Admin = false;
+                    Exp("Пользователя с такими данными нет!");
+                    counter++;
                 }
-                MainWindow mw = new MainWindow();
-                mw.Show();
-                this.Close();
+                if (counter >= 3)
+                {
+                    Inf("Вы ввели 3 раза неправильно пароль\nВвод пароля будет доступен через 10 секунд");
+                    counter = 0;
+                    timer = new DispatcherTimer();
+                    timer.Tick += new EventHandler(timer_Tick);
+                    timer.Interval = new TimeSpan(0, 0, 10);
+                    btnEnter.Visibility = Visibility.Hidden;
+                    timer.Start();
+                }
             }
-            else
+            catch(Exception ex)
             {
-                Exp("Пользователя с такими данными нет!");
-                counter++;
-            }
-            if (counter >= 3)
-            {
-                Inf("Вы ввели 3 раза неправильно пароль\nВвод пароля будет доступен через 10 секунд");
-                counter = 0;
-                timer = new DispatcherTimer();
-                timer.Tick += new EventHandler(timer_Tick);
-                timer.Interval = new TimeSpan(0, 0, 10);
-                btnEnter.Visibility = Visibility.Hidden;
-                timer.Start();
+                Exp(ex.ToString());
             }
         }
 
