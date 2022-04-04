@@ -6,10 +6,15 @@
         xmlns:local="clr-namespace:appCarService"
         Icon="Resources/service_logo.ico"
         mc:Ignorable="d"
-        Title="Окно покупки" Height="300" Width="300" ResizeMode="NoResize">
+        Title="Окно покупки" Height="300" Width="450" ResizeMode="NoResize">
     <Grid Background="#ffffcc">
         <StackPanel>
-            <TextBlock/>
+            <TextBlock Style="{StaticResource tbSetting}"
+                       Text="Вы действительно хотите заказать " 
+                       VerticalAlignment="Center" 
+                       HorizontalAlignment="Center" Margin="0,30,0,0"
+                       FontSize="14" Name="tbBuy"
+                       TextWrapping="Wrap"/>
         </StackPanel>
     </Grid>
 </Window>

@@ -65,7 +65,15 @@ namespace appCarService
         private void btnBuy_Click(object sender, RoutedEventArgs e)
         {
             selectEntites = (Product)lvTovar.SelectedItem;
-
+            if (TovarPage.selectEntites != null)
+            {
+                BuyWindow bw = new BuyWindow();
+                bw.Show();
+            }
+            else
+            {
+                AvtorizationWindow.Exp("Вы ничего не выбрали!");
+            }
         }
     }
 }

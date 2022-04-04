@@ -83,7 +83,7 @@ namespace appCarService
             this.Close();
         }
 
-        public void Exp(string error)
+        public static void Exp(string error)
         {
             MessageBox.Show(error, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
         }

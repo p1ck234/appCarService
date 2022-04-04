@@ -22,6 +22,7 @@ namespace appCarService
         public BuyWindow()
         {
             InitializeComponent();
+            tbBuy.Text += "\"" + TovarPage.selectEntites.Title + "\"" + "?";
         }
     }
 }
