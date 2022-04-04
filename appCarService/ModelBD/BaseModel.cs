@@ -12,10 +12,10 @@ namespace appCarService.ModelBD
         {
         }
 
-        public virtual DbSet<Service> Services { get; set; }
         public virtual DbSet<Manufacturer> Manufacturers { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ProductSale> ProductSales { get; set; }
+        public virtual DbSet<Service> Services { get; set; }
         public virtual DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

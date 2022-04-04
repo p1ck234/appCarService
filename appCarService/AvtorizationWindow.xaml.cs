@@ -87,7 +87,7 @@ namespace appCarService
         {
             MessageBox.Show(error, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
         }
-        public void Inf(string inf)
+        public static void Inf(string inf)
         {
             MessageBox.Show(inf, "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
         }

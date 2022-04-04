@@ -74,6 +74,9 @@
     <Compile Include="ModelBD\ProductSale.cs" />
     <Compile Include="ModelBD\Service.cs" />
     <Compile Include="ModelBD\User.cs" />
+    <Compile Include="ServicesPage.xaml.cs">
+      <DependentUpon>ServicesPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TovarPage.xaml.cs">
       <DependentUpon>TovarPage.xaml</DependentUpon>
     </Compile>
@@ -98,6 +101,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ServicesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

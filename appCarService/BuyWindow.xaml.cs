@@ -32,7 +32,6 @@ namespace appCarService
             a.Add(5);
             cmbCount.ItemsSource = a;
             cmbCount.SelectedIndex = 0;
-
         }
 
         private void btnYes_Click(object sender, RoutedEventArgs e)
@@ -49,11 +48,14 @@ namespace appCarService
             {
                 bd.ProductSales.Add(bd2);
                 bd.SaveChanges();
+                AvtorizationWindow.Inf("Данные сохранены!");
+                this.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            
         }
 
         private void btnNo_Click(object sender, RoutedEventArgs e)

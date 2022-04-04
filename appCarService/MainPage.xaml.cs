@@ -42,7 +42,7 @@ namespace appCarService
 
         private void btnServices_Click(object sender, RoutedEventArgs e)
         {
-
+            Manager.MainFrame.Navigate(new ServicesPage());
         }
 
         private void btnSell_Click(object sender, RoutedEventArgs e)
