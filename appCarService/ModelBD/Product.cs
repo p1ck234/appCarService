@@ -33,5 +33,13 @@ namespace appCarService.ModelBD
         public bool isActive { get; set; }
 
         public int? ManufactureID { get; set; }
+
+        public string ActualText
+        {
+            get
+            {
+                return isActive ? "Актуально" : "Неактуально";
+            }
+        }
     }
 }

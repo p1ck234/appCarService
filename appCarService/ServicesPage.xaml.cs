@@ -51,7 +51,7 @@ namespace appCarService
                 if (cb3.IsChecked == true)
                 {
                     counter += 10000;
-                    tbOtchet.Text += cb2.Content + "\n";
+                    tbOtchet.Text += cb3.Content + "\n";
                 }
                 if (cb4.IsChecked == true)
                 {
@@ -126,7 +126,7 @@ namespace appCarService
                 }
                 if (cb3.IsChecked == true)
                 {
-                    a.Name += cb2.Content + " ";
+                    a.Name += cb3.Content + " ";
                 }
                 if (cb4.IsChecked == true)
                 {
