@@ -28,6 +28,9 @@
             <Setter Property="Width" Value="150"/>
         </Style>
 
+        <Style TargetType="CheckBox">
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
 
         <Color x:Key="MouseLeave" A="255" R="255" G="156" B="26" />
         <Color x:Key="MouseOver" A="255" R="255" G="156" B="100" />

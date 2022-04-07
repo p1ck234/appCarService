@@ -10,68 +10,68 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0,1*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <TextBlock Margin="80,0,0,0" Style="{StaticResource tbSetting}"
-                   Text="Выберите услугу: "/>
+                   Text="Выберите услугу: " FontSize="24"/>
         <TextBlock Margin="80,0,0,0" Grid.Row="1" Style="{StaticResource tbSetting}"
-                   Text="Отчет: "/>
-        <StackPanel Grid.Column="1" VerticalAlignment="Center">
-            <CheckBox Name="cb1" FontSize="14" FontFamily="Tohoma" 
+                   Text="Отчет: " FontSize="24"/>
+        <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="0,10,0,0">
+            <CheckBox Name="cb1" FontFamily="Tohoma" 
                       Content="Техническое обслуживание">
                 <CheckBox.ToolTip>
                     <ToolTip>2000 руб.</ToolTip>
                 </CheckBox.ToolTip>
             </CheckBox>
-            <CheckBox Name="cb2" FontSize="14" FontFamily="Tohoma" 
+            <CheckBox Name="cb2" FontFamily="Tohoma" 
                       Content="Подготовка и продажа новых и б/у автомобилей">
                 <CheckBox.ToolTip>
                     <ToolTip>5000 руб.</ToolTip>
                 </CheckBox.ToolTip>
             </CheckBox>
-            <CheckBox Name="cb3" FontSize="14" FontFamily="Tohoma" 
+            <CheckBox Name="cb3" FontFamily="Tohoma" 
                       Content="Ремонт автоматических и механических коробок передач">
                 <CheckBox.ToolTip>
                     <ToolTip>10000 руб.</ToolTip>
                 </CheckBox.ToolTip>
             </CheckBox>
-            <CheckBox Name="cb4" FontSize="14" FontFamily="Tohoma" 
+            <CheckBox Name="cb4" FontFamily="Tohoma" 
                       Content="Обслуживание и ремонт двигателей">
                 <CheckBox.ToolTip>
                     <ToolTip>15000 руб.</ToolTip>
                 </CheckBox.ToolTip>
             </CheckBox>
-            <CheckBox Name="cb5" FontSize="14" FontFamily="Tohoma" 
+            <CheckBox Name="cb5" FontFamily="Tohoma" 
                       Content="Кузовной ремонт">
                 <CheckBox.ToolTip>
                     <ToolTip>10000 руб.</ToolTip>
                 </CheckBox.ToolTip>
             </CheckBox>
-            <CheckBox Name="cb6" FontSize="14" FontFamily="Tohoma" 
+            <CheckBox Name="cb6" FontFamily="Tohoma" 
                       Content="Ремонт ходовой части, балансировка, развал-схождения">
                 <CheckBox.ToolTip>
                     <ToolTip>13000 руб.</ToolTip>
                 </CheckBox.ToolTip>
             </CheckBox>
-            <CheckBox Name="cb7" FontSize="14" FontFamily="Tohoma" 
+            <CheckBox Name="cb7" FontFamily="Tohoma" 
                       Content="Ремонт электрики">
                 <CheckBox.ToolTip>
                     <ToolTip>15000 руб.</ToolTip>
                 </CheckBox.ToolTip>
             </CheckBox>
-            <CheckBox Name="cb8" FontSize="14" FontFamily="Tohoma" 
+            <CheckBox Name="cb8" FontFamily="Tohoma" 
                       Content="Установка и обслуживание газового оборудования">
                 <CheckBox.ToolTip>
                     <ToolTip>16000 руб.</ToolTip>
                 </CheckBox.ToolTip>
             </CheckBox>
-            <CheckBox Name="cb9" FontSize="14" FontFamily="Tohoma" 
+            <CheckBox Name="cb9" FontFamily="Tohoma" 
                       Content="Реставрация авто и запчастей">
                 <CheckBox.ToolTip>
                     <ToolTip>13000 руб.</ToolTip>
@@ -80,17 +80,19 @@
         </StackPanel>
         <TextBlock Name="tbOtchet" Grid.Row="1" Grid.Column="1" Style="{StaticResource tbSetting}"
                    TextWrapping="Wrap" FontWeight="Light" VerticalAlignment="Top"
-                   FontSize="14" HorizontalAlignment="Left"/>
+                   FontSize="16" HorizontalAlignment="Left"/>
         <Button Name="btnChek" Click="btnChek_Click" 
                 Grid.Row="1" Grid.Column="1" Content="Чек" 
-                VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="5"/>
+                VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="5"
+                Height="40" FontSize="16" FontWeight="Bold"/>
         <Button Name="btnOth" Click="btnOth_Click" 
                 Grid.Row="1" Grid.Column="1" Content="Очистить" 
                 VerticalAlignment="Bottom" HorizontalAlignment="Center"
-                Margin="5"/>
+                Margin="5" Height="40" FontSize="16" FontWeight="Bold"/>
         <Grid Grid.Row="2" Grid.ColumnSpan="2">
             <Button Content="Записаться"
-                    Name="btnSave" Click="btnSave_Click"/>
+                    Name="btnSave" Click="btnSave_Click"
+                    Height="40" FontSize="16" FontWeight="Bold"/>
         </Grid>
     </Grid>
 </Page>

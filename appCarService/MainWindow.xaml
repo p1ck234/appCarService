@@ -11,7 +11,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="10*"/>
-            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Grid Background="#ffffcc">
             <TextBlock Text="Доеду сам!" FontSize="24" Style="{StaticResource tbSetting}"/>
@@ -32,7 +32,8 @@
                    ContentRendered="MainFrame_ContentRendered"/>
         </Grid>
         <Grid Grid.Row="2" Background="#ffffcc">
-            <Button Content="Выход" Name="btnQuit" Click="btnQuit_Click"/>
+            <Button Content="Выход" Name="btnQuit" Click="btnQuit_Click"
+                    FontWeight="Bold" Height="35" Margin="3"/>
         </Grid>
     </Grid>
 </Window>
