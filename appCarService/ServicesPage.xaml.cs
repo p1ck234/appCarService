@@ -22,6 +22,7 @@ namespace appCarService
     public partial class ServicesPage : Page
     {
         int counter = 0;
+        int index = 0;
         public ServicesPage()
         {
             InitializeComponent();
@@ -40,50 +41,60 @@ namespace appCarService
             {
                 if (cb1.IsChecked == true)
                 {
+                    index++;
                     counter += 2000;
-                    tbOtchet.Text += cb1.Content + "\n";
+                    tbOtchet.Text += index.ToString() + ". " +  cb1.Content + "\n";
                 }
                 if (cb2.IsChecked == true)
                 {
+                    index++;
                     counter += 5000;
-                    tbOtchet.Text += cb2.Content + "\n";
+                    tbOtchet.Text += index.ToString() + ". " + cb2.Content + "\n";
                 }
                 if (cb3.IsChecked == true)
                 {
+                    index++;
                     counter += 10000;
-                    tbOtchet.Text += cb3.Content + "\n";
+                    tbOtchet.Text += index.ToString() + ". " + cb3.Content + "\n";
                 }
                 if (cb4.IsChecked == true)
                 {
+                    index++;
                     counter += 15000;
-                    tbOtchet.Text += cb4.Content + "\n";
+                    tbOtchet.Text += index.ToString() + ". " + cb4.Content + "\n";
                 }
                 if (cb5.IsChecked == true)
                 {
+                    index++;
                     counter += 10000;
-                    tbOtchet.Text += cb5.Content + "\n";
+                    tbOtchet.Text += index.ToString() + ". " + cb5.Content + "\n";
                 }
                 if (cb6.IsChecked == true)
                 {
+                    index++;
                     counter += 13000;
-                    tbOtchet.Text += cb6.Content + "\n";
+                    tbOtchet.Text += index.ToString() + ". " + cb6.Content + "\n";
                 }
                 if (cb7.IsChecked == true)
                 {
+                    index++;
                     counter += 15000;
-                    tbOtchet.Text += cb7.Content + "\n";
+                    tbOtchet.Text += index.ToString() + ". " + cb7.Content + "\n";
                 }
                 if (cb8.IsChecked == true)
                 {
+                    index++;
                     counter += 16000;
-                    tbOtchet.Text += cb8.Content + "\n";
+                    tbOtchet.Text += index.ToString() + ". " + cb8.Content + "\n";
                 }
                 if (cb9.IsChecked == true)
                 {
+                    index++;
                     counter += 13000;
-                    tbOtchet.Text += cb9.Content + "\n";
+                    tbOtchet.Text += index.ToString() + ". " + cb9.Content + "\n";
                 }
-                tbOtchet.Text += counter + "руб." + "\n";
+                tbOtchet.Text += "Примерная стоимость услуг = "+ counter + "руб." + "\n";
+                index = 0;
             }
             
         }
@@ -116,6 +127,7 @@ namespace appCarService
             }
             else
             {
+
                 if (cb1.IsChecked == true)
                 {
                     a.Name += cb1.Content + " ";

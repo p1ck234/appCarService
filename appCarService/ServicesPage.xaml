@@ -78,7 +78,7 @@
                 </CheckBox.ToolTip>
             </CheckBox>
         </StackPanel>
-        <TextBlock Name="tbOtchet" Grid.Row="1" Grid.Column="1" Style="{StaticResource tbSetting}"
+        <TextBlock Margin="0,10,0,0" Name="tbOtchet" Grid.Row="1" Grid.Column="1" Style="{StaticResource tbSetting}"
                    TextWrapping="Wrap" FontWeight="Light" VerticalAlignment="Top"
                    FontSize="16" HorizontalAlignment="Left"/>
         <Button Name="btnChek" Click="btnChek_Click" 
