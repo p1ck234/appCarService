@@ -69,6 +69,7 @@ namespace appCarService
             {
                 BuyWindow bw = new BuyWindow();
                 bw.Show();
+                TovarPage.selectEntites = null;
             }
             else
             {
