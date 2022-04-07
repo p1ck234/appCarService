@@ -17,7 +17,11 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
         </Style>
-        
+
+        <Style TargetType="RadioButton">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontFamily" Value="Tahoma"/>
+        </Style>
         
         <Style TargetType="TextBox" x:Key="tBoxSetting">
             <Setter Property="FontFamily" Value="Tahoma"/>
