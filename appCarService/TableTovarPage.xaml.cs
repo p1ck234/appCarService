@@ -55,10 +55,15 @@ namespace appCarService
         {
             bd.ProductSales.Load();
             ProductSale currentProduct = new ProductSale();
-            currentProduct.ID = int.Parse(tbId.Text);
-            currentProduct.SaleDate = DateTime.Parse(tbDateSale.Text);
-            currentProduct.ProductID = int.Parse(tbIdProd.Text);
-            currentProduct.Quantity = int.Parse(tbQunt.Text);
+            if (tbId.Text != "" && tbDateSale.Text != "" && tbIdProd.Text != "" && tbQunt.Text != "")
+            {
+                currentProduct.ID = int.Parse(tbId.Text);
+                currentProduct.SaleDate = DateTime.Parse(tbDateSale.Text);
+                currentProduct.ProductID = int.Parse(tbIdProd.Text);
+                currentProduct.Quantity = int.Parse(tbQunt.Text);
+                AvtorizationWindow.Inf("Данный сохранены");
+                spRed.Visibility = Visibility.Hidden;
+            }
         }
 
 
@@ -99,6 +104,28 @@ namespace appCarService
             if (!match.Success)
             {
                 e.Handled = true;
+            }
+        }
+
+        private void btnDel_Click(object sender, RoutedEventArgs e)
+        {
+            bd.ProductSales.Load();
+            selectEntites = (ProductSale)dtgTovarTable.SelectedItem;
+            if (selectEntites != null)
+            {
+                try
+                {
+                    bd.ProductSales.Remove(selectEntites);
+                    bd.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    AvtorizationWindow.Exp(ex.ToString());
+                }
+            }
+            else
+            {
+                AvtorizationWindow.Exp("Вы ничего не выбрали!");
             }
         }
     }

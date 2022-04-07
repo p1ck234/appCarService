@@ -36,7 +36,7 @@
                 <Button Name="btnRed" Content="Редактировать" Width="250" Height="40"
                        FontSize="32" Click="btnRed_Click"/>
                 <Button Name="btnDel" Content="Удалить" Margin="10,0,0,0" Width="250" Height="40"
-                       FontSize="32"/>
+                       FontSize="32" Click="btnDel_Click"/>
             </StackPanel>
             <StackPanel Name="spRed" Visibility="Hidden">
                 <StackPanel Orientation="Horizontal">
