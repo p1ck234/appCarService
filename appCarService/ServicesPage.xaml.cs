@@ -39,59 +39,60 @@ namespace appCarService
             }
             else
             {
+                borderChech.Visibility = Visibility.Visible;
                 if (cb1.IsChecked == true)
                 {
                     index++;
                     counter += 2000;
-                    tbOtchet.Text += index.ToString() + ". " +  cb1.Content + "\n";
+                    tbOtchet.Text += index.ToString() + ". " +  cb1.Content + " (2000 руб.)" + "\n";
                 }
                 if (cb2.IsChecked == true)
                 {
                     index++;
                     counter += 5000;
-                    tbOtchet.Text += index.ToString() + ". " + cb2.Content + "\n";
+                    tbOtchet.Text += index.ToString() + ". " + cb2.Content + " (5000 руб.)" + "\n";
                 }
                 if (cb3.IsChecked == true)
                 {
                     index++;
                     counter += 10000;
-                    tbOtchet.Text += index.ToString() + ". " + cb3.Content + "\n";
+                    tbOtchet.Text += index.ToString() + ". " + cb3.Content + " (10000 руб.)" + "\n";
                 }
                 if (cb4.IsChecked == true)
                 {
                     index++;
                     counter += 15000;
-                    tbOtchet.Text += index.ToString() + ". " + cb4.Content + "\n";
+                    tbOtchet.Text += index.ToString() + ". " + cb4.Content + " (15000 руб.)" + "\n";
                 }
                 if (cb5.IsChecked == true)
                 {
                     index++;
                     counter += 10000;
-                    tbOtchet.Text += index.ToString() + ". " + cb5.Content + "\n";
+                    tbOtchet.Text += index.ToString() + ". " + cb5.Content + " (10000 руб.)" + "\n";
                 }
                 if (cb6.IsChecked == true)
                 {
                     index++;
                     counter += 13000;
-                    tbOtchet.Text += index.ToString() + ". " + cb6.Content + "\n";
+                    tbOtchet.Text += index.ToString() + ". " + cb6.Content + " (13000 руб.)" + "\n";
                 }
                 if (cb7.IsChecked == true)
                 {
                     index++;
                     counter += 15000;
-                    tbOtchet.Text += index.ToString() + ". " + cb7.Content + "\n";
+                    tbOtchet.Text += index.ToString() + ". " + cb7.Content + " (15000 руб.)" + "\n";
                 }
                 if (cb8.IsChecked == true)
                 {
                     index++;
                     counter += 16000;
-                    tbOtchet.Text += index.ToString() + ". " + cb8.Content + "\n";
+                    tbOtchet.Text += index.ToString() + ". " + cb8.Content + " (16000 руб.)" + "\n";
                 }
                 if (cb9.IsChecked == true)
                 {
                     index++;
                     counter += 13000;
-                    tbOtchet.Text += index.ToString() + ". " + cb9.Content + "\n";
+                    tbOtchet.Text += index.ToString() + ". " + cb9.Content + " (13000 руб.)" + "\n";
                 }
                 tbOtchet.Text += "Примерная стоимость услуг = "+ counter + "руб." + "\n";
                 index = 0;
@@ -110,6 +111,7 @@ namespace appCarService
             cb7.IsChecked = false;
             cb8.IsChecked = false;
             cb9.IsChecked = false;
+            borderChech.Visibility = Visibility.Hidden;
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
