@@ -19,8 +19,9 @@
         </Style>
 
         <Style TargetType="RadioButton">
-            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontSize" Value="26"/>
             <Setter Property="FontFamily" Value="Tahoma"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
         </Style>
         
         <Style TargetType="TextBox" x:Key="tBoxSetting">
