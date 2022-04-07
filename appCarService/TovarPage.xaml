@@ -57,6 +57,13 @@
                                     </Binding.TargetNullValue>
                                 </Binding>
                             </Image.Source>
+                            <Image.ToolTip>
+                                <ToolTip Width="auto" MaxWidth="300">
+                                    <TextBlock TextWrapping="Wrap"
+                                               Text="{Binding Description}">
+                                    </TextBlock>
+                                </ToolTip>
+                            </Image.ToolTip>
                         </Image>
                         <TextBlock Text="{Binding Title}" VerticalAlignment="Center" 
                                    TextAlignment="Center"
