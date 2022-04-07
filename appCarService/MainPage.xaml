@@ -12,18 +12,18 @@
         <StackPanel Orientation="Horizontal"
                     HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button Name="btnSell" Click="btnSell_Click" Content="Таблица покупок" 
-                    Margin="20" Height="100" Width="150" 
-                    FontSize="16" FontWeight="Bold" />
+                    Margin="20" Height="200" Width="300" 
+                    FontSize="30" FontWeight="Bold"/>
             <Button Name="btnTovar" Click="btnTovar_Click" Content="Товары" 
-                    Margin="20" Height="100" Width="150"
-                    FontSize="16" FontWeight="Bold"/>
+                    Margin="20" Height="200" Width="300" 
+                    FontSize="50" FontWeight="Bold"/>
             <Button Name="btnServices" Click="btnServices_Click" Content="Услуги" 
-                    Margin="20" Height="100" Width="150" 
-                    FontSize="16" FontWeight="Bold"/>
+                    Margin="20" Height="200" Width="300"  
+                    FontSize="50" FontWeight="Bold"/>
             <Button Name="btnServicesManager" Click="btnServicesManager_Click" 
-                    Content="Настройка услуг" 
-                    Margin="20" Height="100" Width="150" 
-                    FontSize="16" FontWeight="Bold"/>
+                    Content="Таблица услуг" 
+                    Margin="20" Height="200" Width="300"  
+                    FontSize="30" FontWeight="Bold"/>
         </StackPanel>
        
         

@@ -118,7 +118,7 @@ namespace appCarService
                     bd.ProductSales.Remove(selectEntites);
                     bd.SaveChanges();
                 }
-                catch ()
+                catch
                 {
                     AvtorizationWindow.Exp("Что-то пошло не так(");
                 }
