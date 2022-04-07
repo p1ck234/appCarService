@@ -96,7 +96,6 @@ namespace appCarService
                 tbOtchet.Text += "Примерная стоимость услуг = "+ counter + "руб." + "\n";
                 index = 0;
             }
-            
         }
 
         private void btnOth_Click(object sender, RoutedEventArgs e)

@@ -17,7 +17,28 @@
             <TextBlock Text="Доеду сам!" FontSize="24" Style="{StaticResource tbSetting}"/>
             <Image Source="Resources/service_logo.png"
                    VerticalAlignment="Center" HorizontalAlignment="Left"
-                   Margin="10,0,0,0"/>
+                   Margin="10,0,0,0">
+                <Image.ToolTip>
+                    <ToolTip Width="auto" MaxWidth="400">
+                        <TextBlock TextWrapping="Wrap"
+                                   Text="Реквизиты ООО Автосервис «Доеду сам»
+                                    Юридический и почтовый адрес предприятия:
+                                    456510, Челябинская область, Сосновский район,
+                                    с. Долгодеревенское, ул. 1 Мая, д. 104, корп. 3, кв. 8
+                                    Фактический адрес:
+                                    454084, г. Челябинск, ул. Шоссе Металлургов, 59Б/1
+                                    ИНН 745000620784
+                                    ОГРН 30474502080012
+                                    Расчетный счет 40802810072000001063
+                                    Банк Отделение № 8597 Сбербанка России г. Челябинск
+                                    БИК 047501602
+                                    Корреспондентский счет 30101810700000000602
+                                    Директор:
+                                    Мордвинов Александр Геннадьевич">   
+                        </TextBlock>
+                    </ToolTip>
+                </Image.ToolTip>
+            </Image>
             <TextBlock Name="tbRole" Opacity="0.7"
                        Style="{StaticResource tbSetting}"
                        HorizontalAlignment="Right" VerticalAlignment="Top"
