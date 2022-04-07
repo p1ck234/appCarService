@@ -32,9 +32,34 @@
                          Name="sortId"/>
             <RadioButton GroupName="1" Content="По ID продукта"
                          Name="sortIdProduct"/>
-            <TextBlock Text="Редактировать" Style="{StaticResource tbSetting}"
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Редактировать" Width="250" Height="40"
                        FontSize="32"/>
-            
+                <Button Content="Удалить" Margin="10,0,0,0" Width="250" Height="40"
+                       FontSize="32"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="ID" Style="{StaticResource tbSetting}"
+                    FontSize="26" Margin="5"/>
+                <TextBox FontSize="26" Margin="5" Style="{StaticResource tBoxSetting}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Дата продажи" Style="{StaticResource tbSetting}"
+                    FontSize="26" Margin="5"/>
+                <TextBox FontSize="26" Margin="5" Style="{StaticResource tBoxSetting}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="ID продукта" Style="{StaticResource tbSetting}"
+                    FontSize="26" Margin="5"/>
+                <TextBox FontSize="26" Margin="5" Style="{StaticResource tBoxSetting}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Количество" Style="{StaticResource tbSetting}"
+                    FontSize="26" Margin="5"/>
+                <TextBox FontSize="26" Margin="5" Style="{StaticResource tBoxSetting}"/>
+            </StackPanel>
+            <Button Content="Сохранить" Width="250" Height="40"
+                       FontSize="32"/>
         </StackPanel>
     </Grid>
 </Page>
