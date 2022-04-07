@@ -29,7 +29,7 @@ namespace appCarService
         {
             InitializeComponent();
             bd.ProductSales.Load();
-            dtgTovarTable.ItemsSource = bd.ProductSales.Local;
+            dtgTovarTable.ItemsSource = bd.ProductSales.Local.OrderBy(x => x.ID);
         }
         public static ProductSale selectEntites = new ProductSale();
         private void btnRed_Click(object sender, RoutedEventArgs e)
@@ -118,15 +118,41 @@ namespace appCarService
                     bd.ProductSales.Remove(selectEntites);
                     bd.SaveChanges();
                 }
-                catch (Exception ex)
+                catch ()
                 {
-                    AvtorizationWindow.Exp(ex.ToString());
+                    AvtorizationWindow.Exp("Что-то пошло не так(");
                 }
             }
             else
             {
                 AvtorizationWindow.Exp("Вы ничего не выбрали!");
             }
+        }
+
+        private void sortDate_Checked(object sender, RoutedEventArgs e)
+        {
+            bd.ProductSales.Load();
+            dtgTovarTable.ItemsSource = bd.ProductSales.Local.OrderByDescending(x => x.SaleDate);
+        }
+
+        private void sortQuntity_Checked(object sender, RoutedEventArgs e)
+        {
+            bd.ProductSales.Load();
+            dtgTovarTable.ItemsSource = bd.ProductSales.Local.OrderBy(x => x.Quantity);
+
+        }
+
+        private void sortIdProduct_Checked(object sender, RoutedEventArgs e)
+        {
+            bd.ProductSales.Load();
+            dtgTovarTable.ItemsSource = bd.ProductSales.Local.OrderBy(x => x.ProductID);
+
+        }
+
+        private void sortId_Checked(object sender, RoutedEventArgs e)
+        {
+            bd.ProductSales.Load();
+            dtgTovarTable.ItemsSource = bd.ProductSales.Local.OrderBy(x => x.ID);
         }
     }
 }

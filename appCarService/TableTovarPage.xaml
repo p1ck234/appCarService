@@ -25,13 +25,14 @@
             <TextBlock Text="Сортировать" Style="{StaticResource tbSetting}"
                        FontSize="32"/>
             <RadioButton GroupName="1" Content="По дате"
-                         Name="sortDate"/>
+                         Name="sortDate" Checked="sortDate_Checked"/>
             <RadioButton GroupName="1" Content="По количеству"
-                         Name="sortQuntity"/>
+                         Name="sortQuntity" Checked="sortQuntity_Checked"/>
             <RadioButton GroupName="1" Content="По ID"
-                         Name="sortId"/>
+                         Name="sortId" Checked="sortId_Checked"
+                         IsChecked="True"/>
             <RadioButton GroupName="1" Content="По ID продукта"
-                         Name="sortIdProduct"/>
+                         Name="sortIdProduct" Checked="sortIdProduct_Checked"/>
             <StackPanel Orientation="Horizontal">
                 <Button Name="btnRed" Content="Редактировать" Width="250" Height="40"
                        FontSize="32" Click="btnRed_Click"/>
