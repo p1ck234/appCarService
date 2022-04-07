@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -58,27 +59,47 @@ namespace appCarService
             currentProduct.SaleDate = DateTime.Parse(tbDateSale.Text);
             currentProduct.ProductID = int.Parse(tbIdProd.Text);
             currentProduct.Quantity = int.Parse(tbQunt.Text);
-
         }
+
 
         private void tbId_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-
+            Regex input = new Regex(@"[0-9]");
+            Match match = input.Match(e.Text);
+            if (!match.Success)
+            {
+                e.Handled = true;
+            }
         }
 
         private void tbDateSale_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-
+            Regex input = new Regex(@"[0-9/:/\/]");
+            Match match = input.Match(e.Text);
+            if (!match.Success)
+            {
+                e.Handled = true;
+            }
         }
 
         private void tbIdProd_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-
+            Regex input = new Regex(@"[0-9]");
+            Match match = input.Match(e.Text);
+            if (!match.Success)
+            {
+                e.Handled = true;
+            }
         }
 
         private void tbQunt_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-
+            Regex input = new Regex(@"[0-9]");
+            Match match = input.Match(e.Text);
+            if (!match.Success)
+            {
+                e.Handled = true;
+            }
         }
     }
 }
