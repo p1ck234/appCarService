@@ -47,7 +47,7 @@ namespace appCarService
 
         private void btnSell_Click(object sender, RoutedEventArgs e)
         {
-
+            Manager.MainFrame.Navigate(new TableTovarPage());
         }
 
         private void btnServicesManager_Click(object sender, RoutedEventArgs e)
