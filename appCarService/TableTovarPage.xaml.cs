@@ -34,7 +34,6 @@ namespace appCarService
         ProductSale selectEntites = new ProductSale();
         private void btnRed_Click(object sender, RoutedEventArgs e)
         {
-            selectEntites = null;
             AvtorizationWindow.bd.ProductSales.Load();
             selectEntites = (ProductSale)dtgTovarTable.SelectedItem;
             if (selectEntites != null)
@@ -49,7 +48,7 @@ namespace appCarService
                 }
                 catch (Exception ex)
                 { 
-                    Console.WriteLine(ex.Message); 
+                    MessageBox.Show(ex.Message); 
                 }
             }
             else
