@@ -39,11 +39,18 @@ namespace appCarService
             selectEntites = (ProductSale)dtgTovarTable.SelectedItem;
             if (TovarPage.selectEntites != null)
             {
-                tbId.Text = selectEntites.ID.ToString();
-                tbDateSale.Text = selectEntites.SaleDate.ToString();
-                tbIdProd.Text = selectEntites.ProductID.ToString();
-                tbQunt.Text = selectEntites.Quantity.ToString();
-                selectEntites = null;
+                try
+                {
+                    tbId.Text = selectEntites.ID.ToString();
+                    tbDateSale.Text = selectEntites.SaleDate.ToString();
+                    tbIdProd.Text = selectEntites.ProductID.ToString();
+                    tbQunt.Text = selectEntites.Quantity.ToString();
+                }
+                catch (Exception ex)
+                { 
+                    Console.WriteLine(ex.Message); 
+                }
+                
             }
             else
             {

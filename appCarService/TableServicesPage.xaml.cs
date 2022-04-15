@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,12 @@ namespace appCarService
     /// </summary>
     public partial class TableServicesPage : Page
     {
+        ModelBD.BaseModel bd = new ModelBD.BaseModel();
         public TableServicesPage()
         {
             InitializeComponent();
+            bd.Services.Load();
+            dtgServicesTable.ItemsSource = bd.Services.Local;
         }
     }
 }
