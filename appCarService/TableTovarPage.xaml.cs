@@ -31,7 +31,7 @@ namespace appCarService
             bd.ProductSales.Load();
             dtgTovarTable.ItemsSource = bd.ProductSales.Local.OrderBy(x => x.ID);
         }
-        public static ProductSale selectEntites = new ProductSale();
+        public ProductSale selectEntites = new ProductSale();
         private void btnRed_Click(object sender, RoutedEventArgs e)
         {
             bd.ProductSales.Load();
@@ -56,6 +56,7 @@ namespace appCarService
             {
                 AvtorizationWindow.Exp("Вы ничего не выбрали!");
             }
+
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
