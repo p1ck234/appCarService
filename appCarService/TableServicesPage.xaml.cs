@@ -33,17 +33,35 @@ namespace appCarService
         Service selectEntites = new Service();
         private void sortPrice_Checked(object sender, RoutedEventArgs e)
         {
-
+            AvtorizationWindow.bd.Services.Load();
+            dtgServicesTable.ItemsSource = AvtorizationWindow.bd.Services.Local.OrderBy(x => x.Price);
         }
 
         private void sortId_Checked(object sender, RoutedEventArgs e)
         {
-
+            AvtorizationWindow.bd.Services.Load();
+            dtgServicesTable.ItemsSource = AvtorizationWindow.bd.Services.Local.OrderBy(x => x.ID);
         }
 
         private void btnRed_Click(object sender, RoutedEventArgs e)
         {
-
+            selectEntites = null;
+            AvtorizationWindow.bd.Services.Load();
+            selectEntites = (Service)dtgServicesTable.SelectedItem;
+            if (selectEntites != null)
+            {
+                try
+                {
+                    tbId.Text = selectEntites.ID.ToString();
+                    tbName.Text = selectEntites.Name.ToString(); 
+                    tbPrice.Text = selectEntites.Price.ToString(); 
+                    spRed.Visibility = Visibility.Visible;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
 
         private void btnDel_Click(object sender, RoutedEventArgs e)
@@ -54,10 +72,13 @@ namespace appCarService
             {
                 try
                 {
-                    AvtorizationWindow.bd.Services.Remove(selectEntites);
-                    AvtorizationWindow.bd.SaveChanges();
-                    dtgServicesTable.ItemsSource = AvtorizationWindow.bd.Services.Local.OrderBy(x => x.ID);
-                    AvtorizationWindow.Inf("Элемент удален");
+                    if (MessageBox.Show("Вы действительно хотите удалить этот элемент из базы данных?", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                    {
+                        AvtorizationWindow.bd.Services.Remove(selectEntites);
+                        AvtorizationWindow.bd.SaveChanges();
+                        dtgServicesTable.ItemsSource = AvtorizationWindow.bd.Services.Local.OrderBy(x => x.ID);
+                        AvtorizationWindow.Inf("Элемент удален");
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -102,7 +123,27 @@ namespace appCarService
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-
+            AvtorizationWindow.bd.Services.Load();
+            Service current = new Service();
+            if(tbId.Text != "" && tbName.Text != "" && tbPrice.Text != "")
+            {
+                try
+                {
+                    current.ID = int.Parse(tbId.Text);
+                    current.Name = tbName.Text;
+                    current.Price = int.Parse(tbPrice.Text);
+                    AvtorizationWindow.bd.Services.Remove(selectEntites);
+                    AvtorizationWindow.bd.Services.Add(current);
+                    AvtorizationWindow.bd.SaveChanges();
+                    AvtorizationWindow.Inf("Данный сохранены");
+                    spRed.Visibility = Visibility.Hidden;
+                    dtgServicesTable.ItemsSource = AvtorizationWindow.bd.Services.Local.OrderBy(x => x.ID);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }
