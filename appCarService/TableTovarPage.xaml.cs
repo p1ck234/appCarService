@@ -31,6 +31,7 @@ namespace appCarService
             bd.ProductSales.Load();
             dtgTovarTable.ItemsSource = bd.ProductSales.Local.OrderBy(x => x.ID);
         }
+
         ProductSale selectEntites = new ProductSale();
         private void btnRed_Click(object sender, RoutedEventArgs e)
         {
@@ -85,7 +86,6 @@ namespace appCarService
             }
         }
 
-
         private void tbId_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             Regex input = new Regex(@"[0-9]");
@@ -134,12 +134,17 @@ namespace appCarService
             {
                 try
                 {
-                    bd.ProductSales.Remove(selectEntites);
-                    bd.SaveChanges();
+                    if (MessageBox.Show("Вы действительно хотите удалить этот элемент из базы данных?","Внимание",MessageBoxButton.YesNo,MessageBoxImage.Question) ==MessageBoxResult.Yes)
+                    {
+                        bd.ProductSales.Remove(selectEntites);
+                        bd.SaveChanges();
+                        dtgTovarTable.ItemsSource = bd.ProductSales.Local.OrderBy(x => x.ID);
+                        AvtorizationWindow.Inf("Элемент удален");
+                    }
                 }
-                catch
+                catch (Exception ex)
                 {
-                    AvtorizationWindow.Exp("Что-то пошло не так(");
+                    MessageBox.Show(ex.Message);
                 }
             }
             else
