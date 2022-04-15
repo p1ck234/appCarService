@@ -31,13 +31,13 @@ namespace appCarService
             bd.ProductSales.Load();
             dtgTovarTable.ItemsSource = bd.ProductSales.Local.OrderBy(x => x.ID);
         }
-        public ProductSale selectEntites = new ProductSale();
+        ProductSale selectEntites = new ProductSale();
         private void btnRed_Click(object sender, RoutedEventArgs e)
         {
+            selectEntites = null;
             bd.ProductSales.Load();
-            spRed.Visibility = Visibility.Visible;
             selectEntites = (ProductSale)dtgTovarTable.SelectedItem;
-            if (TovarPage.selectEntites != null)
+            if (selectEntites != null)
             {
                 try
                 {
@@ -45,12 +45,12 @@ namespace appCarService
                     tbDateSale.Text = selectEntites.SaleDate.ToString();
                     tbIdProd.Text = selectEntites.ProductID.ToString();
                     tbQunt.Text = selectEntites.Quantity.ToString();
+                    spRed.Visibility = Visibility.Visible;
                 }
                 catch (Exception ex)
                 { 
                     Console.WriteLine(ex.Message); 
                 }
-                
             }
             else
             {
@@ -65,12 +65,23 @@ namespace appCarService
             ProductSale currentProduct = new ProductSale();
             if (tbId.Text != "" && tbDateSale.Text != "" && tbIdProd.Text != "" && tbQunt.Text != "")
             {
-                currentProduct.ID = int.Parse(tbId.Text);
-                currentProduct.SaleDate = DateTime.Parse(tbDateSale.Text);
-                currentProduct.ProductID = int.Parse(tbIdProd.Text);
-                currentProduct.Quantity = int.Parse(tbQunt.Text);
-                AvtorizationWindow.Inf("Данный сохранены");
-                spRed.Visibility = Visibility.Hidden;
+                try
+                {
+                    currentProduct.ID = int.Parse(tbId.Text);
+                    currentProduct.SaleDate = DateTime.Parse(tbDateSale.Text);
+                    currentProduct.ProductID = int.Parse(tbIdProd.Text);
+                    currentProduct.Quantity = int.Parse(tbQunt.Text);
+                    bd.ProductSales.Remove(selectEntites);
+                    bd.ProductSales.Add(currentProduct);
+                    bd.SaveChanges();
+                    AvtorizationWindow.Inf("Данный сохранены");
+                    spRed.Visibility = Visibility.Hidden;
+                    dtgTovarTable.ItemsSource = bd.ProductSales.Local.OrderBy(x => x.ID);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
