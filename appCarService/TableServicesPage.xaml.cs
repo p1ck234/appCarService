@@ -1,8 +1,10 @@
-﻿using System;
+﻿using appCarService.ModelBD;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -28,6 +30,7 @@ namespace appCarService
             dtgServicesTable.ItemsSource = AvtorizationWindow.bd.Services.Local.OrderBy(x => x.ID);
         }
 
+        Service selectEntites = new Service();
         private void sortPrice_Checked(object sender, RoutedEventArgs e)
         {
 
@@ -45,22 +48,56 @@ namespace appCarService
 
         private void btnDel_Click(object sender, RoutedEventArgs e)
         {
-
+            AvtorizationWindow.bd.Services.Load();
+            selectEntites = (Service)dtgServicesTable.SelectedItem;
+            if(selectEntites != null)
+            {
+                try
+                {
+                    AvtorizationWindow.bd.Services.Remove(selectEntites);
+                    AvtorizationWindow.bd.SaveChanges();
+                    dtgServicesTable.ItemsSource = AvtorizationWindow.bd.Services.Local.OrderBy(x => x.ID);
+                    AvtorizationWindow.Inf("Элемент удален");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                AvtorizationWindow.Exp("Вы ничего не выбрали!");
+            }
         }
 
         private void tbId_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-
+            Regex input = new Regex(@"[0-9]");
+            Match match = input.Match(e.Text);
+            if (!match.Success)
+            {
+                e.Handled = true;
+            }
         }
 
         private void tbName_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-
+            Regex input = new Regex(@"[а-яА-Я]");
+            Match match = input.Match(e.Text);
+            if (!match.Success)
+            {
+                e.Handled = true;
+            }
         }
 
         private void tbPrice_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-
+            Regex input = new Regex(@"[0-9]");
+            Match match = input.Match(e.Text);
+            if (!match.Success)
+            {
+                e.Handled = true;
+            }
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
