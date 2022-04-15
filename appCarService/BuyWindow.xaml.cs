@@ -1,4 +1,5 @@
-﻿using System;
+﻿using appCarService.ModelBD;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -36,18 +37,17 @@ namespace appCarService
 
         private void btnYes_Click(object sender, RoutedEventArgs e)
         {
-            ModelBD.BaseModel bd = new ModelBD.BaseModel();
-            bd.ProductSales.Load();
-            ModelBD.ProductSale bd2 = new ModelBD.ProductSale();
-            
-            bd2.ID = bd.ProductSales.Local.Count + 1;
-            bd2.SaleDate = DateTime.Now;
-            bd2.ProductID = TovarPage.selectEntites.ID;
-            bd2.Quantity = (int)cmbCount.SelectedItem;
+            //ModelBD.BaseModel bd = new ModelBD.BaseModel();
+            AvtorizationWindow.bd.ProductSales.Load();
+            ProductSale currentBuy = new ProductSale();
             try
             {
-                bd.ProductSales.Add(bd2);
-                bd.SaveChanges();
+                currentBuy.ID = AvtorizationWindow.bd.ProductSales.Local.Count + 1;
+                currentBuy.SaleDate = DateTime.Now;
+                currentBuy.ProductID = TovarPage.selectEntites.ID;
+                currentBuy.Quantity = (int)cmbCount.SelectedItem;
+                AvtorizationWindow.bd.ProductSales.Add(currentBuy);
+                AvtorizationWindow.bd.SaveChanges();
                 AvtorizationWindow.Inf("Данные сохранены!");
                 this.Close();
             }
@@ -55,7 +55,6 @@ namespace appCarService
             {
                 MessageBox.Show(ex.Message);
             }
-            
         }
 
         private void btnNo_Click(object sender, RoutedEventArgs e)

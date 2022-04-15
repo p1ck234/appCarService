@@ -23,20 +23,19 @@ namespace appCarService
     /// </summary>
     public partial class TableTovarPage : Page
     {
-        ModelBD.BaseModel bd = new ModelBD.BaseModel();
         
         public TableTovarPage()
         {
             InitializeComponent();
-            bd.ProductSales.Load();
-            dtgTovarTable.ItemsSource = bd.ProductSales.Local.OrderBy(x => x.ID);
+            AvtorizationWindow.bd.ProductSales.Load();
+            dtgTovarTable.ItemsSource = AvtorizationWindow.bd.ProductSales.Local.OrderBy(x => x.ID);
         }
 
         ProductSale selectEntites = new ProductSale();
         private void btnRed_Click(object sender, RoutedEventArgs e)
         {
             selectEntites = null;
-            bd.ProductSales.Load();
+            AvtorizationWindow.bd.ProductSales.Load();
             selectEntites = (ProductSale)dtgTovarTable.SelectedItem;
             if (selectEntites != null)
             {
@@ -62,7 +61,7 @@ namespace appCarService
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            bd.ProductSales.Load();
+            AvtorizationWindow.bd.ProductSales.Load();
             ProductSale currentProduct = new ProductSale();
             if (tbId.Text != "" && tbDateSale.Text != "" && tbIdProd.Text != "" && tbQunt.Text != "")
             {
@@ -72,12 +71,12 @@ namespace appCarService
                     currentProduct.SaleDate = DateTime.Parse(tbDateSale.Text);
                     currentProduct.ProductID = int.Parse(tbIdProd.Text);
                     currentProduct.Quantity = int.Parse(tbQunt.Text);
-                    bd.ProductSales.Remove(selectEntites);
-                    bd.ProductSales.Add(currentProduct);
-                    bd.SaveChanges();
+                    AvtorizationWindow.bd.ProductSales.Remove(selectEntites);
+                    AvtorizationWindow.bd.ProductSales.Add(currentProduct);
+                    AvtorizationWindow.bd.SaveChanges();
                     AvtorizationWindow.Inf("Данный сохранены");
                     spRed.Visibility = Visibility.Hidden;
-                    dtgTovarTable.ItemsSource = bd.ProductSales.Local.OrderBy(x => x.ID);
+                    dtgTovarTable.ItemsSource = AvtorizationWindow.bd.ProductSales.Local.OrderBy(x => x.ID);
                 }
                 catch (Exception ex)
                 {
@@ -128,7 +127,7 @@ namespace appCarService
 
         private void btnDel_Click(object sender, RoutedEventArgs e)
         {
-            bd.ProductSales.Load();
+            AvtorizationWindow.bd.ProductSales.Load();
             selectEntites = (ProductSale)dtgTovarTable.SelectedItem;
             if (selectEntites != null)
             {
@@ -136,9 +135,9 @@ namespace appCarService
                 {
                     if (MessageBox.Show("Вы действительно хотите удалить этот элемент из базы данных?","Внимание",MessageBoxButton.YesNo,MessageBoxImage.Question) ==MessageBoxResult.Yes)
                     {
-                        bd.ProductSales.Remove(selectEntites);
-                        bd.SaveChanges();
-                        dtgTovarTable.ItemsSource = bd.ProductSales.Local.OrderBy(x => x.ID);
+                        AvtorizationWindow.bd.ProductSales.Remove(selectEntites);
+                        AvtorizationWindow.bd.SaveChanges();
+                        dtgTovarTable.ItemsSource = AvtorizationWindow.bd.ProductSales.Local.OrderBy(x => x.ID);
                         AvtorizationWindow.Inf("Элемент удален");
                     }
                 }
@@ -155,28 +154,28 @@ namespace appCarService
 
         private void sortDate_Checked(object sender, RoutedEventArgs e)
         {
-            bd.ProductSales.Load();
-            dtgTovarTable.ItemsSource = bd.ProductSales.Local.OrderByDescending(x => x.SaleDate);
+            AvtorizationWindow.bd.ProductSales.Load();
+            dtgTovarTable.ItemsSource = AvtorizationWindow.bd.ProductSales.Local.OrderByDescending(x => x.SaleDate);
         }
 
         private void sortQuntity_Checked(object sender, RoutedEventArgs e)
         {
-            bd.ProductSales.Load();
-            dtgTovarTable.ItemsSource = bd.ProductSales.Local.OrderBy(x => x.Quantity);
+            AvtorizationWindow.bd.ProductSales.Load();
+            dtgTovarTable.ItemsSource = AvtorizationWindow.bd.ProductSales.Local.OrderBy(x => x.Quantity);
 
         }
 
         private void sortIdProduct_Checked(object sender, RoutedEventArgs e)
         {
-            bd.ProductSales.Load();
-            dtgTovarTable.ItemsSource = bd.ProductSales.Local.OrderBy(x => x.ProductID);
+            AvtorizationWindow.bd.ProductSales.Load();
+            dtgTovarTable.ItemsSource = AvtorizationWindow.bd.ProductSales.Local.OrderBy(x => x.ProductID);
 
         }
 
         private void sortId_Checked(object sender, RoutedEventArgs e)
         {
-            bd.ProductSales.Load();
-            dtgTovarTable.ItemsSource = bd.ProductSales.Local.OrderBy(x => x.ID);
+            AvtorizationWindow.bd.ProductSales.Load();
+            dtgTovarTable.ItemsSource = AvtorizationWindow.bd.ProductSales.Local.OrderBy(x => x.ID);
         }
     }
 }

@@ -22,12 +22,11 @@ namespace appCarService
     /// </summary>
     public partial class TovarPage : Page
     {
-        ModelBD.BaseModel bd = new ModelBD.BaseModel();
         public TovarPage()
         {
             InitializeComponent();
-            bd.Products.Load();
-            lvTovar.ItemsSource = bd.Products.Local;
+            AvtorizationWindow.bd.Products.Load();
+            lvTovar.ItemsSource = AvtorizationWindow.bd.Products.Local;
             CheckActual.IsChecked = true;
 
             if (Manager.Admin == true)
@@ -43,23 +42,23 @@ namespace appCarService
         public static Product selectEntites = new Product(); 
         private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
-            bd.Products.Load();
-            lvTovar.ItemsSource = bd.Products.Local.Where(x => x.Title.ToLower().Contains(tbSearch.Text.ToLower()));
+            AvtorizationWindow.bd.Products.Load();
+            lvTovar.ItemsSource = AvtorizationWindow.bd.Products.Local.Where(x => x.Title.ToLower().Contains(tbSearch.Text.ToLower()));
         }
 
         private void CheckActual_Checked(object sender, RoutedEventArgs e)
         {
             if (CheckActual.IsChecked.Value)
             {
-                bd.Products.Load();
-                lvTovar.ItemsSource = bd.Products.Local.Where(x => x.isActive);
+                AvtorizationWindow.bd.Products.Load();
+                lvTovar.ItemsSource = AvtorizationWindow.bd.Products.Local.Where(x => x.isActive);
             }
         }
 
         private void CheckActual_Unchecked(object sender, RoutedEventArgs e)
         {
-            bd.Products.Load();
-            lvTovar.ItemsSource = bd.Products.Local;
+            AvtorizationWindow.bd.Products.Load();
+            lvTovar.ItemsSource = AvtorizationWindow.bd.Products.Local;
             
         }
         private void btnBuy_Click(object sender, RoutedEventArgs e)
@@ -69,7 +68,6 @@ namespace appCarService
             {
                 BuyWindow bw = new BuyWindow();
                 bw.Show();
-                TovarPage.selectEntites = null;
             }
             else
             {

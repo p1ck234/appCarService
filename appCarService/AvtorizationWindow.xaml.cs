@@ -24,16 +24,17 @@ namespace appCarService
     /// </summary>
     public partial class AvtorizationWindow : Window
     {
+        public static ModelBD.BaseModel bd = new ModelBD.BaseModel();
         public AvtorizationWindow()
         {
             InitializeComponent();
+            bd.Users.Load();
         }
-        
+
         DispatcherTimer timer = new DispatcherTimer();
         int counter = 0;
         private void btnEnter_Click(object sender, RoutedEventArgs e)
         {
-            ModelBD.BaseModel bd = new ModelBD.BaseModel();
             bd.Users.Load();
             try
             {

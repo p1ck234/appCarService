@@ -116,10 +116,9 @@ namespace appCarService
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            ModelBD.BaseModel bd = new ModelBD.BaseModel();
-            bd.Services.Load();
+            AvtorizationWindow.bd.Services.Load();
             ModelBD.Service a = new ModelBD.Service();
-            a.ID = bd.Services.Local.Count + 1;
+            a.ID = AvtorizationWindow.bd.Services.Local.Count + 1;
             if (cb1.IsChecked != true && cb2.IsChecked != true && cb3.IsChecked != true && cb4.IsChecked != true &&
                 cb5.IsChecked != true && cb6.IsChecked != true &&
                 cb7.IsChecked != true && cb8.IsChecked != true && cb9.IsChecked != true)
@@ -169,8 +168,8 @@ namespace appCarService
             a.Price = counter;
             try
             {
-                bd.Services.Add(a);
-                bd.SaveChanges();
+                AvtorizationWindow.bd.Services.Add(a);
+                AvtorizationWindow.bd.SaveChanges();
                 AvtorizationWindow.Inf("Данные сохранены!");
             }
             catch (Exception ex)

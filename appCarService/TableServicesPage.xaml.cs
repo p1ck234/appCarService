@@ -21,12 +21,11 @@ namespace appCarService
     /// </summary>
     public partial class TableServicesPage : Page
     {
-        ModelBD.BaseModel bd = new ModelBD.BaseModel();
         public TableServicesPage()
         {
             InitializeComponent();
-            bd.Services.Load();
-            dtgServicesTable.ItemsSource = bd.Services.Local;
+            AvtorizationWindow.bd.Services.Load();
+            dtgServicesTable.ItemsSource = AvtorizationWindow.bd.Services.Local;
         }
     }
 }
