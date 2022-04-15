@@ -25,7 +25,47 @@ namespace appCarService
         {
             InitializeComponent();
             AvtorizationWindow.bd.Services.Load();
-            dtgServicesTable.ItemsSource = AvtorizationWindow.bd.Services.Local;
+            dtgServicesTable.ItemsSource = AvtorizationWindow.bd.Services.Local.OrderBy(x => x.ID);
+        }
+
+        private void sortPrice_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void sortId_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnRed_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnDel_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void tbId_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+
+        }
+
+        private void tbName_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+
+        }
+
+        private void tbPrice_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+
+        }
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
