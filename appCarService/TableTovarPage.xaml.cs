@@ -71,6 +71,7 @@ namespace appCarService
                     currentProduct.SaleDate = DateTime.Parse(tbDateSale.Text);
                     currentProduct.ProductID = int.Parse(tbIdProd.Text);
                     currentProduct.Quantity = int.Parse(tbQunt.Text);
+                    currentProduct.ClientSeviceID = null;
                     AvtorizationWindow.bd.ProductSales.Remove(selectEntites);
                     AvtorizationWindow.bd.ProductSales.Add(currentProduct);
                     AvtorizationWindow.bd.SaveChanges();
