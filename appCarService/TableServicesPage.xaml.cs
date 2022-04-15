@@ -62,6 +62,10 @@ namespace appCarService
                     MessageBox.Show(ex.Message);
                 }
             }
+            else
+            {
+                AvtorizationWindow.Exp("Вы ничего не выбрали!");
+            }
         }
 
         private void btnDel_Click(object sender, RoutedEventArgs e)
