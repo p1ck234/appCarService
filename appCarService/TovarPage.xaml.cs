@@ -32,10 +32,13 @@ namespace appCarService
             if (Manager.Admin == true)
             {
                 btnBuy.Visibility = Visibility.Hidden;
+                btnRed.Visibility = Visibility.Visible;
             }
             else
             {
                 btnBuy.Visibility = Visibility.Visible;
+                btnRed.Visibility = Visibility.Hidden;
+
             }
         }
 
@@ -73,6 +76,11 @@ namespace appCarService
             {
                 AvtorizationWindow.Exp("Вы ничего не выбрали!");
             }
+        }
+
+        private void btnRed_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
