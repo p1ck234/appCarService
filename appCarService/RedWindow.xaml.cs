@@ -1,5 +1,7 @@
-﻿using System;
+﻿using appCarService.ModelBD;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -28,6 +30,9 @@ namespace appCarService
             actual.Add("Неактуально");
             cmbActual.ItemsSource = actual;
             cmbActual.SelectedIndex = 0;
+            tbName.Text = TovarPage.selectEntites.Title;
+            tbPrice.Text = TovarPage.selectEntites.Cost.ToString();
+
         }
 
         private void tbName_PreviewTextInput(object sender, TextCompositionEventArgs e)
@@ -57,6 +62,8 @@ namespace appCarService
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
+            AvtorizationWindow.bd.ProductSales.Load();
+            ProductSale currentBuy = new ProductSale();
 
         }
     }
