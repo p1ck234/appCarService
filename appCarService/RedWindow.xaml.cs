@@ -33,7 +33,6 @@ namespace appCarService
             tbName.Text = TovarPage.selectEntites.Title;
             tbPrice.Text = TovarPage.selectEntites.Cost.ToString();
             tbDescript.Text = TovarPage.selectEntites.Description;
-
         }
 
         private void tbName_PreviewTextInput(object sender, TextCompositionEventArgs e)
@@ -79,11 +78,18 @@ namespace appCarService
                 currentProduct.isActive = false;
             }
             currentProduct.ManufactureID = TovarPage.selectEntites.ManufactureID;
-            AvtorizationWindow.bd.Products.Remove(TovarPage.selectEntites);
-            AvtorizationWindow.bd.Products.Add(currentProduct);
-            AvtorizationWindow.bd.SaveChanges();
-            AvtorizationWindow.Inf("Информация сохранена!");
-            this.Close();
+            try
+            {
+                AvtorizationWindow.bd.Products.Remove(TovarPage.selectEntites);
+                AvtorizationWindow.bd.Products.Add(currentProduct);
+                AvtorizationWindow.bd.SaveChanges();
+                AvtorizationWindow.Inf("Информация сохранена!");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void tbDescript_PreviewTextInput(object sender, TextCompositionEventArgs e)

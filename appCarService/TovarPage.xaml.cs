@@ -68,7 +68,7 @@ namespace appCarService
         private void btnBuy_Click(object sender, RoutedEventArgs e)
         {
             selectEntites = (Product)lvTovar.SelectedItem;
-            if (TovarPage.selectEntites != null)
+            if (selectEntites != null)
             {
                 BuyWindow bw = new BuyWindow();
                 bw.Show();
@@ -82,7 +82,7 @@ namespace appCarService
         private void btnRed_Click(object sender, RoutedEventArgs e)
         {
             selectEntites = (Product)lvTovar.SelectedItem;
-            if (TovarPage.selectEntites != null)
+            if (selectEntites != null)
             {
                 RedWindow a = new RedWindow();
                 a.Show();
@@ -96,12 +96,27 @@ namespace appCarService
         private void btnDel_Click(object sender, RoutedEventArgs e)
         {
             AvtorizationWindow.bd.Products.Load();
-            if (MessageBox.Show("Вы действительно хотите удалить этот элемент из базы данных?", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            if (selectEntites != null)
             {
-                AvtorizationWindow.bd.Products.Remove(TovarPage.selectEntites);
-                AvtorizationWindow.bd.SaveChanges();
-                lvTovar.ItemsSource = AvtorizationWindow.bd.Products.Local.OrderBy(x => x.ID);
-                AvtorizationWindow.Inf("Элемент удален");
+                if (MessageBox.Show("Вы действительно хотите удалить этот элемент из базы данных?", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                {
+                    selectEntites = (Product)lvTovar.SelectedItem;
+                    try
+                    {
+                        AvtorizationWindow.bd.Products.Remove(selectEntites);
+                        AvtorizationWindow.bd.SaveChanges();
+                        lvTovar.ItemsSource = AvtorizationWindow.bd.Products.Local.OrderBy(x => x.ID);
+                        AvtorizationWindow.Inf("Элемент удален");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
+            else
+            {
+                AvtorizationWindow.Exp("Вы ничего не выбрали!");
             }
         }
     }
