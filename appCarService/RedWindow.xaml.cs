@@ -63,7 +63,16 @@ namespace appCarService
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
             AvtorizationWindow.bd.ProductSales.Load();
-            ProductSale currentBuy = new ProductSale();
+            Product currentProduct = new Product();
+            currentProduct.ID = TovarPage.selectEntites.ID;
+            currentProduct.Title = tbName.Text;
+            currentProduct.Cost = decimal.Parse(tbPrice.Text);
+            currentProduct.Description = 
+
+        }
+
+        private void tbDescript_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
 
         }
     }
