@@ -80,7 +80,16 @@ namespace appCarService
 
         private void btnRed_Click(object sender, RoutedEventArgs e)
         {
-
+            selectEntites = (Product)lvTovar.SelectedItem;
+            if (TovarPage.selectEntites != null)
+            {
+                RedWindow a = new RedWindow();
+                a.Show();
+            }
+            else
+            {
+                AvtorizationWindow.Exp("Вы ничего не выбрали!");
+            }
         }
     }
 }

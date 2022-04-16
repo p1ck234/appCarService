@@ -28,7 +28,6 @@ namespace appCarService
             actual.Add("Неактуально");
             cmbActual.ItemsSource = actual;
             cmbActual.SelectedIndex = 0;
-
         }
 
         private void tbName_PreviewTextInput(object sender, TextCompositionEventArgs e)
@@ -49,6 +48,16 @@ namespace appCarService
             {
                 e.Handled = true;
             }
+        }
+
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
