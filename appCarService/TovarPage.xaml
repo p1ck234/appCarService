@@ -27,7 +27,9 @@
                 <Button Content="Заказать" Name="btnBuy" Click="btnBuy_Click" 
                         Height="30" Margin="10,0,0,0"/>
                 <Button Content="Редактировать" Name="btnRed" Click="btnRed_Click" 
-                        Height="30" Margin="10,0,0,0" Visibility="Visible"/>
+                        Height="30" Margin="10,0,0,0" Visibility="Hidden"/>
+                <Button Content="Редактировать" Name="btnDel" Click="btnDel_Click" 
+                        Height="30" Margin="10,0,0,0" Visibility="Hidden"/>
             </StackPanel>
         </WrapPanel>
         

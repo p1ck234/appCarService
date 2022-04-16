@@ -33,12 +33,13 @@ namespace appCarService
             {
                 btnBuy.Visibility = Visibility.Hidden;
                 btnRed.Visibility = Visibility.Visible;
+                btnDel.Visibility = Visibility.Visible;
             }
             else
             {
                 btnBuy.Visibility = Visibility.Visible;
-                btnRed.Visibility = Visibility.Hidden;
-
+                btnRed.Visibility = Visibility.Hidden; 
+                btnDel.Visibility = Visibility.Hidden;
             }
         }
 
@@ -89,6 +90,18 @@ namespace appCarService
             else
             {
                 AvtorizationWindow.Exp("Вы ничего не выбрали!");
+            }
+        }
+
+        private void btnDel_Click(object sender, RoutedEventArgs e)
+        {
+            AvtorizationWindow.bd.Products.Load();
+            if (MessageBox.Show("Вы действительно хотите удалить этот элемент из базы данных?", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                AvtorizationWindow.bd.Products.Remove(TovarPage.selectEntites);
+                AvtorizationWindow.bd.SaveChanges();
+                lvTovar.ItemsSource = AvtorizationWindow.bd.Products.Local.OrderBy(x => x.ID);
+                AvtorizationWindow.Inf("Элемент удален");
             }
         }
     }
