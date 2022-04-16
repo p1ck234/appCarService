@@ -32,12 +32,13 @@ namespace appCarService
             cmbActual.SelectedIndex = 0;
             tbName.Text = TovarPage.selectEntites.Title;
             tbPrice.Text = TovarPage.selectEntites.Cost.ToString();
+            tbDescript.Text = TovarPage.selectEntites.Description;
 
         }
 
         private void tbName_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            Regex input = new Regex(@"[а-яА-Я]");
+            Regex input = new Regex(@"[а-яА-Я\,\.0-9a-zA-Z]");
             Match match = input.Match(e.Text);
             if (!match.Success)
             {
@@ -62,18 +63,37 @@ namespace appCarService
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            AvtorizationWindow.bd.ProductSales.Load();
+            AvtorizationWindow.bd.Products.Load();
             Product currentProduct = new Product();
             currentProduct.ID = TovarPage.selectEntites.ID;
             currentProduct.Title = tbName.Text;
             currentProduct.Cost = decimal.Parse(tbPrice.Text);
-            currentProduct.Description = 
-
+            currentProduct.Description = tbDescript.Text;
+            currentProduct.MainImagePath = TovarPage.selectEntites.MainImagePath;
+            if (cmbActual.SelectedIndex == 0)
+            {
+                currentProduct.isActive = true;
+            }
+            else
+            {
+                currentProduct.isActive = false;
+            }
+            currentProduct.ManufactureID = TovarPage.selectEntites.ManufactureID;
+            AvtorizationWindow.bd.Products.Remove(TovarPage.selectEntites);
+            AvtorizationWindow.bd.Products.Add(currentProduct);
+            AvtorizationWindow.bd.SaveChanges();
+            AvtorizationWindow.Inf("Информация сохранена!");
+            this.Close();
         }
 
         private void tbDescript_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-
+            Regex input = new Regex(@"[а-яА-Я\,\.0-9a-zA-Z]");
+            Match match = input.Match(e.Text);
+            if (!match.Success)
+            {
+                e.Handled = true;
+            }
         }
     }
 }
