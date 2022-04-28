@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:appCarService"
         mc:Ignorable="d"
+        Icon="Resources/service_logo.ico"
         Title="Окно редактирования" Height="400" Width="450" ResizeMode="NoResize">
     <Grid Background="#ffffcc">
         <Grid.RowDefinitions>
