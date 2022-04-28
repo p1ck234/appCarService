@@ -35,6 +35,7 @@ namespace appCarService
                 btnRed.Visibility = Visibility.Visible;
                 btnDel.Visibility = Visibility.Visible;
                 btnRel.Visibility = Visibility.Visible;
+                btnAdd.Visibility = Visibility.Visible;
             }
             else
             {
@@ -42,7 +43,7 @@ namespace appCarService
                 btnRed.Visibility = Visibility.Hidden; 
                 btnDel.Visibility = Visibility.Hidden;
                 btnRel.Visibility = Visibility.Hidden;
-
+                btnAdd.Visibility = Visibility.Hidden;
             }
         }
 
@@ -127,6 +128,11 @@ namespace appCarService
         {
             AvtorizationWindow.bd.Products.Load();
             lvTovar.ItemsSource = AvtorizationWindow.bd.Products.Local;
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
