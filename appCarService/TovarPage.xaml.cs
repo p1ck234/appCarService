@@ -34,12 +34,15 @@ namespace appCarService
                 btnBuy.Visibility = Visibility.Hidden;
                 btnRed.Visibility = Visibility.Visible;
                 btnDel.Visibility = Visibility.Visible;
+                btnRel.Visibility = Visibility.Visible;
             }
             else
             {
                 btnBuy.Visibility = Visibility.Visible;
                 btnRed.Visibility = Visibility.Hidden; 
                 btnDel.Visibility = Visibility.Hidden;
+                btnRel.Visibility = Visibility.Hidden;
+
             }
         }
 
@@ -118,6 +121,12 @@ namespace appCarService
             {
                 AvtorizationWindow.Exp("Вы ничего не выбрали!");
             }
+        }
+
+        private void btnRel_Click(object sender, RoutedEventArgs e)
+        {
+            AvtorizationWindow.bd.Products.Load();
+            lvTovar.ItemsSource = AvtorizationWindow.bd.Products.Local;
         }
     }
 }
