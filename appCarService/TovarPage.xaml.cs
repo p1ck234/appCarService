@@ -132,7 +132,8 @@ namespace appCarService
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-
+            WindowAdd a = new WindowAdd();
+            a.Show();
         }
     }
 }

@@ -89,6 +89,9 @@
     <Compile Include="TovarPage.xaml.cs">
       <DependentUpon>TovarPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WindowAdd.xaml.cs">
+      <DependentUpon>WindowAdd.xaml</DependentUpon>
+    </Compile>
     <Page Include="AvtorizationWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -130,6 +133,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="TovarPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowAdd.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
