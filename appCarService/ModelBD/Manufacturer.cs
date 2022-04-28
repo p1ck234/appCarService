@@ -9,13 +9,9 @@ namespace appCarService.ModelBD
     [Table("Manufacturer")]
     public partial class Manufacturer
     {
-        [Key]
-        [Column(Order = 0)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ID { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
+        [Required]
         [StringLength(100)]
         public string Name { get; set; }
 

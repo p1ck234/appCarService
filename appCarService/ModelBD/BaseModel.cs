@@ -8,7 +8,7 @@ namespace appCarService.ModelBD
     public partial class BaseModel : DbContext
     {
         public BaseModel()
-            : base("name=BaseModel")
+            : base("name=BaseModel1")
         {
         }
 

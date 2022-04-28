@@ -9,18 +9,13 @@ namespace appCarService.ModelBD
     [Table("Product")]
     public partial class Product
     {
-        [Key]
-        [Column(Order = 0)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ID { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
+        [Required]
         [StringLength(100)]
         public string Title { get; set; }
 
-        [Key]
-        [Column(Order = 2, TypeName = "money")]
+        [Column(TypeName = "money")]
         public decimal Cost { get; set; }
 
         public string Description { get; set; }
@@ -28,12 +23,9 @@ namespace appCarService.ModelBD
         [StringLength(1000)]
         public string MainImagePath { get; set; }
 
-        [Key]
-        [Column(Order = 3)]
         public bool isActive { get; set; }
 
         public int? ManufactureID { get; set; }
-
         public string ActualText
         {
             get
