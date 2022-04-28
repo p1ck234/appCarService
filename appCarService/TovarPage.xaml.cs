@@ -128,6 +128,7 @@ namespace appCarService
         {
             AvtorizationWindow.bd.Products.Load();
             lvTovar.ItemsSource = AvtorizationWindow.bd.Products.Local;
+            AvtorizationWindow.Inf("Информация обновлена");
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
